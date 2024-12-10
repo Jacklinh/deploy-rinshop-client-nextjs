@@ -41,7 +41,7 @@ const getAllProducts = async (): Promise<ProductsResponse> => {
     try {
       const response = await fetchApi.get<ProductsResponse>(
         productsEndPoints.products,{
-            next: { revalidate: 5 } // revalidate lại dữ liệu sau 5 giây
+            next: { revalidate: 60 } // revalidate lại dữ liệu sau 5 giây
         }
       );
       return response;
@@ -94,7 +94,7 @@ const getAllProducts = async (): Promise<ProductsResponse> => {
       });
       const url = `${productsEndPoints.products}?${queryParams.toString()}`;
       const response = await fetchApi.get<ProductsResponse>(url,{
-        next: { revalidate: 5 } // revalidate lại dữ liệu sau 5 giây
+        next: { revalidate: 60 } // revalidate lại dữ liệu sau 5 giây
       });
       return response;
     } catch (error) {

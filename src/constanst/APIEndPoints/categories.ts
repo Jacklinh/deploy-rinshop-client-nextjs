@@ -14,7 +14,7 @@ const getAllCategories = async (): Promise<CategoryResponse> => {
     try {
       const response = await fetchApi.get<CategoryResponse>(
         categoriesEndPoints.categories,{
-            next: { revalidate: 5 } // revalidate lại dữ liệu sau 5 giây
+            next: { revalidate: 60 } // revalidate lại dữ liệu sau 5 giây
         }
       );
       return response;
