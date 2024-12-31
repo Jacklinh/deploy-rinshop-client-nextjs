@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['deploy-rinshop-restfulapi-mongoose.vercel.app']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'deploy-rinshop-restfulapi-mongoose.vercel.app',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   }
 }
 
