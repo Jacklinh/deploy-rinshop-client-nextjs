@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Cấu hình cơ bản
+  images: {
+    domains: ['deploy-rinshop-restfulapi-mongoose.vercel.app']
+  }
 }
 
 module.exports = nextConfig 
