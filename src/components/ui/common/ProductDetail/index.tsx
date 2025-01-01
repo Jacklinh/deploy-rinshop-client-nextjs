@@ -85,7 +85,7 @@ export default async function ProductDetail({ slug }: ProductDetailProps) {
                                                 <li key={p._id}>
                                                     <div className="product_box">
                                                         <div className="product_image">
-                                                            <Link href={`/products/${p.slug}`}>
+                                                            <Link href={`/product/${p.slug}`}>
                                                                 <ImageWithFallback
                                                                     src={`${globalSetting.UPLOAD_DIRECTORY}/${p.thumbnail}`}
                                                                     width={500}

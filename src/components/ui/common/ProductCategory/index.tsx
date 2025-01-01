@@ -125,7 +125,7 @@ const ProductCategory = async ({ categorySlug, searchParams }: ProductCategoryPr
                                             <li key={`product-${p._id}-${index}`}>
                                                 <div className="product_box">
                                                     <div className="product_image">
-                                                        <Link href={`/products/${p.slug}`}>
+                                                        <Link href={`/product/${p.slug}`}>
                                                             <ImageWithFallback
                                                                 src={`${globalSetting.UPLOAD_DIRECTORY}/${p.thumbnail}`}
                                                                 width={500}
