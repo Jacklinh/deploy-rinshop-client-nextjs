@@ -1,4 +1,3 @@
-
 import { TypeProduct } from '@/types/type';
 import productApi from '@/constanst/APIEndPoints/products';
 import { formatPrice } from '@/utils/formatPrice';
@@ -8,6 +7,8 @@ import { globalSetting } from '@/constanst/configs';
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import ButtonAddToCart from '../ButtonAddToCart';
 import Cart from '../Cart';
+import ImageWithFallback from '../ImageWithFallback'
+
 interface ProductCategoryProps {
     categorySlug: string;
     searchParams: {
@@ -125,10 +126,10 @@ const ProductCategory = async ({ categorySlug, searchParams }: ProductCategoryPr
                                                 <div className="product_box">
                                                     <div className="product_image">
                                                         <Link href={`/products/${p.slug}`}>
-                                                            <Image
+                                                            <ImageWithFallback
                                                                 src={`${globalSetting.UPLOAD_DIRECTORY}/${p.thumbnail}`}
                                                                 width={500}
-                                                                height={500}    
+                                                                height={500}
                                                                 alt={p.product_name}
                                                                 loading="lazy"
                                                             />
@@ -138,7 +139,7 @@ const ProductCategory = async ({ categorySlug, searchParams }: ProductCategoryPr
                                                         <h3>
                                                             <Link href={`/product/${p.slug}`}>{p.product_name}</Link>
                                                         </h3>
-                                                        
+
                                                         <p className="price_unit">Đơn vị {p.unit}</p>
                                                         <div className="product_price">
                                                             <p className="price">
@@ -154,8 +155,8 @@ const ProductCategory = async ({ categorySlug, searchParams }: ProductCategoryPr
                                                                     <span className="price_new">{formatPrice(p.price)}</span>
                                                                 )}
                                                             </p>
-                                                            
-                                                            
+
+
                                                             <ButtonAddToCart
                                                                 data={{
                                                                     _id: p._id,
