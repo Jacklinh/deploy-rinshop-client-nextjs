@@ -94,7 +94,7 @@ const CheckoutComponent = () => {
                 if (isAuthenticated) {
                     const confirm = window.confirm('Đặt hàng thành công! Bạn có muốn theo dõi đơn hàng(ok) hoặc về trang chủ(cancel)');
                     if (confirm) {
-                        router.push('/profile/orders');
+                        router.push('/');
                     } else {
                         router.push('/');
                     }
