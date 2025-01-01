@@ -5,6 +5,10 @@ import dynamic from 'next/dynamic'
 const Header = dynamic(() => import('@/components/ui/layouts/Header'), {
   loading: () => <p>Loading...</p>
 })
+const Footer = dynamic(() => import('@/components/ui/common/Footer'), {
+  loading: () => <p>Loading...</p>
+})
+
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -38,6 +42,7 @@ export default function RootLayout({
         <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

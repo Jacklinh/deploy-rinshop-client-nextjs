@@ -3,7 +3,6 @@ import { useState,useEffect } from 'react'
 import { useCart } from '@/hooks/useCart';
 import { FaWindowClose } from "react-icons/fa";
 import { BsCartXFill } from "react-icons/bs";
-import Image from 'next/image';
 import Link from 'next/link';
 import { globalSetting } from '@/constanst/configs';
 import ButtonAddToCart from '../ButtonAddToCart';
@@ -18,6 +17,7 @@ import {
   SheetTrigger,
   SheetFooter,
 } from "@/components/ui/sheet"
+import ImageWithFallback from '../ImageWithFallback'
 const Cart = () => {
     const {getTotalNumber,totalAmount,products,removeFromCart} = useCart();
     const [totalNumber, setTotalNumber] = useState(0);
@@ -49,7 +49,7 @@ const Cart = () => {
                                         <li key={`product_cart_${p._id}`}>
                                             <div className="cart_item">
                                                 <p className="cart_image">
-                                                    <Image
+                                                    <ImageWithFallback
                                                         src={`${globalSetting.UPLOAD_DIRECTORY}/${p.thumbnail}`}
                                                         width={50}
                                                         height={50}

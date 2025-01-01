@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+import ImageWithFallback from '../ImageWithFallback'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 import { axiosClient } from '@/library/axiosClient';
 import { globalSetting } from '@/constanst/configs';
@@ -373,8 +373,8 @@ const CheckoutComponent = () => {
                                 {products.map((item) => (
                                     <li key={item._id} className="cart_item cart_item_checkout">
                                         <div className="cart_image">
-                                            <Image
-                                                src={item.thumbnail ? `${globalSetting.UPLOAD_DIRECTORY}/${item.thumbnail}` : '/images/no-image.jpg'}
+                                            <ImageWithFallback
+                                                src={item.thumbnail ? `${globalSetting.UPLOAD_DIRECTORY}/${item.thumbnail}` : '/images/noimage.jpg'}
                                                 alt={item.product_name || ''}
                                                 width={50}
                                                 height={50}
