@@ -96,8 +96,8 @@ export default async function ProductDetail({ slug }: ProductDetailProps) {
                                                             </Link>
                                                         </div>
                                                         <div className="product_detail">
-                                                            <h3><Link href={`/products/${p.slug}`}>{p.product_name}</Link></h3>
-                                                            <p className='price_unit'>1 kg</p>
+                                                            <h3><Link href={`/product/${p.slug}`}>{p.product_name}</Link></h3>
+                                                            <p className='price_unit'>{p.unit}</p>
                                                             <div className="product_price">
                                                                 <p className='price'>
                                                                     {
